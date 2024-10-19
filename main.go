@@ -29,6 +29,7 @@ func getPath(cmd []string) string {
 		"fastfetch":  "weak_machine.mp3",
 		"ssh":        "connection.mp3",
 		"make":       "building.mp3",
+		"touch":      "created.mp3",
 	}
 
 	for k, v := range cmds {
