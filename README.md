@@ -11,6 +11,17 @@ This project adds Warframe dialogs that are played according to what you're doin
 - run `make setup`
 - restart terminal, it should work
 
+### Adding sounds
+
+To add sounds a new sound:
+- go to https://kasumata.ee/search
+- download sound you need
+- open `main.go`
+- in this file you'll find a "go-like" map with a list of "command":"filename"
+- add a new position
+- run `make` (or `make update`)
+- remember to open a PR! Keep Pushing!
+
 ### Uninstallation
 
 1. To disable: in your `~/.bashrc` remove/comment out `source $HOME/.bashrc.WarframeOS`
