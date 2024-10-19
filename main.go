@@ -20,6 +20,7 @@ func getPath(cmd []string) string {
 	cmds := map[string]string{
 		"yay":        "yay.mp3",
 		"git commit": "commit.mp3",
+		"rm":         "eliminated.mp3",
 	}
 
 	for k, v := range cmds {
@@ -51,7 +52,7 @@ func main() {
 	op := &oto.NewContextOptions{}
 
 	// Usually 44100 or 48000. Other values might cause distortions in Oto
-	op.SampleRate = 44100
+	op.SampleRate = 48000
 
 	// Number of channels (aka locations) to play sounds from. Either 1 or 2.
 	// 1 is mono sound, and 2 is stereo (most speakers are stereo).
