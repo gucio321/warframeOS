@@ -3,6 +3,8 @@ package main
 import (
 	"embed"
 	"os"
+	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/ebitengine/oto/v3"
@@ -13,8 +15,17 @@ import (
 var data embed.FS
 
 func getPath(cmd []string) string {
-	if len(cmd) > 0 && cmd[0] == "yay" {
-		return "data/yay.mp3"
+	c := strings.Join(cmd, " ")
+	// command : file
+	cmds := map[string]string{
+		"yay":        "yay.mp3",
+		"git commit": "commit.mp3",
+	}
+
+	for k, v := range cmds {
+		if strings.HasPrefix(k, c) {
+			return filepath.Join("data", v)
+		}
 	}
 
 	return ""
