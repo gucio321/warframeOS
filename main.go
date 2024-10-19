@@ -25,6 +25,8 @@ func getPath(cmd []string) string {
 		"rm":         "eliminated.mp3",
 		"man":        "a_little_help.mp3",
 		"info":       "a_little_help.mp3",
+		"neofetch":   "weak_machine.mp3",
+		"fastfetch":  "weak_machine.mp3",
 	}
 
 	for k, v := range cmds {
