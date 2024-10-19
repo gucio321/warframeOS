@@ -9,6 +9,7 @@ log_command() {
     if [ "$last_command" != "$previous_command" ]; then
         local last_command=$(history 1 | sed 's/^[ ]*[0-9]\+[ ]*//')  # Get last command
         warframeos $last_command &> /dev/null &
+        disown
     fi
 
     # Store the current command for comparison with the next one
