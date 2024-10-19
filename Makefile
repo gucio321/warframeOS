@@ -1,7 +1,8 @@
 all: update
 
 setup: update
-	echo "source ${PWD}/bashrc" >> ~/.bashrc
+	cp ./bashrc ~/.bashrc.WarframeOS
+	echo "source ${HOME}/.bashrc.WarframeOS" >> ~/.bashrc
 
 update:
 	go install .
