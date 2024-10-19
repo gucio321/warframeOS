@@ -21,10 +21,12 @@ func getPath(cmd []string) string {
 		"yay":     "yay.mp3",
 		"git add": "commit.mp3",
 		"rm":      "eliminated.mp3",
+		"man":     "a_little_help.mp3",
+		"info":    "a_little_help.mp3",
 	}
 
 	for k, v := range cmds {
-		if strings.HasPrefix(k, c) {
+		if strings.HasPrefix(c, k) {
 			return filepath.Join("data", v)
 		}
 	}
@@ -34,6 +36,10 @@ func getPath(cmd []string) string {
 
 func main() {
 	cmdParts := os.Args[1:]
+	if len(cmdParts) == 0 {
+		return
+	}
+
 	path := getPath(cmdParts)
 	if path == "" {
 		return
