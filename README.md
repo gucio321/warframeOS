@@ -4,6 +4,8 @@
 
 This project adds Warframe dialogs that are played according to what you're doing in your bash.
 
+:attention: This project is just a kind of meme and it isn't a real working thing :smile:
+
 ## Setup
 
 - ensure you have [`go`](https://go.dev) installed and added its user's bin directory to your PATH (`~/go/bin`)
