@@ -7,14 +7,13 @@ fi
 log_command() {
     last_command=$(history 1 | sed 's/^[ ]*[0-9]\+[ ]*//')  # Get last command
     if [ "$last_command" != "$previous_command" ]; then
-        local last_command=$(history 1 | sed 's/^[ ]*[0-9]\+[ ]*//')  # Get last command
-        #warframeos $last_command &> /dev/null &
         warframeos $last_command &
         disown
+        export previous_command=$last_command
+    else
+        export previous_command=""
     fi
 
-    # Store the current command for comparison with the next one
-    export previous_command=$last_command
 }
 
 # Trap DEBUG signal to execute before each command
