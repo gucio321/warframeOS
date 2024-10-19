@@ -33,6 +33,7 @@ func getPath(cmd []string) string {
 		"go run":     "run.mp3",
 		"cat":        "take_a_look.mp3",
 		"cd":         "gothere.mp3",
+		"ls":         "lookaround.mp3",
 	}
 
 	for k, v := range cmds {
