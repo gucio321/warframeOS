@@ -18,9 +18,9 @@ func getPath(cmd []string) string {
 	c := strings.Join(cmd, " ")
 	// command : file
 	cmds := map[string]string{
-		"yay":        "yay.mp3",
-		"git commit": "commit.mp3",
-		"rm":         "eliminated.mp3",
+		"yay":     "yay.mp3",
+		"git add": "commit.mp3",
+		"rm":      "eliminated.mp3",
 	}
 
 	for k, v := range cmds {
