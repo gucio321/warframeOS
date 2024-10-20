@@ -29,6 +29,7 @@ func getPath(cmd []string) string {
 		"fastfetch":  "weak_machine.mp3",
 		"ssh":        "connection.mp3",
 		"make":       "building.mp3",
+		"go build":   "building.mp3",
 		"touch":      "created.mp3",
 		"go run":     "run.mp3",
 		"cat":        "take_a_look.mp3",
