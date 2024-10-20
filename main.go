@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"math/rand"
 	"os"
 	"path/filepath"
 	"strings"
@@ -17,31 +18,31 @@ var data embed.FS
 func getPath(cmd []string) string {
 	c := strings.Join(cmd, " ")
 	// command : file
-	cmds := map[string]string{
-		"yay":        "yay.mp3",
-		"git add":    "commit.mp3",
-		"git commit": "upgrade.mp3",
-		"git push":   "pushing.mp3",
-		"rm":         "eliminated.mp3",
-		"man":        "a_little_help.mp3",
-		"info":       "a_little_help.mp3",
-		"neofetch":   "weak_machine.mp3",
-		"fastfetch":  "weak_machine.mp3",
-		"ssh":        "connection.mp3",
-		"make":       "building.mp3",
-		"go build":   "building.mp3",
-		"touch":      "created.mp3",
-		"go run":     "run.mp3",
-		"cat":        "take_a_look.mp3",
-		"cd":         "gothere.mp3",
-		"ls":         "lookaround.mp3",
-		"clear":      "cleanup.mp3",
-		"ssh":        "were_in.mp3",
+	cmds := map[string][]string{
+		"yay":        {"yay.mp3"},
+		"git add":    {"commit.mp3"},
+		"git commit": {"upgrade.mp3"},
+		"git push":   {"pushing.mp3"},
+		"rm":         {"eliminated.mp3"},
+		"man":        {"a_little_help.mp3"},
+		"info":       {"a_little_help.mp3"},
+		"neofetch":   {"weak_machine.mp3"},
+		"fastfetch":  {"weak_machine.mp3"},
+		"make":       {"building.mp3"},
+		"go build":   {"building.mp3"},
+		"touch":      {"created.mp3"},
+		"go run":     {"run.mp3"},
+		"cat":        {"take_a_look.mp3"},
+		"cd":         {"gothere.mp3"},
+		"ls":         {"lookaround.mp3"},
+		"clear":      {"cleanup.mp3"},
+		"ssh":        {"were_in.mp3", "connection.mp3"},
 	}
 
 	for k, v := range cmds {
 		if strings.HasPrefix(c, k) {
-			return filepath.Join("data", v)
+			rand.Seed(time.Now().UnixMilli())
+			return filepath.Join("data", v[rand.Intn(len(v))])
 		}
 	}
 
